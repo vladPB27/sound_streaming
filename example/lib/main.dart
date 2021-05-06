@@ -9,7 +9,8 @@ import 'package:hexcolor/hexcolor.dart';
 // const _SERVER_URL = 'ws://192.168.0.1.ngrok.io';
 // const _SERVER_URL = 'ws://192.168.0.1';
 const _PORT = 8888;
-const _SERVER_URL = 'ws://192.168.71.10:8888';
+// const _SERVER_URL = 'ws://192.168.71.10:8888';
+const _SERVER_URL = 'ws://192.168.1.22:8888';
 // const _SERVER_URL = 'ws://192.168.71.115';
 
 void main() {
@@ -272,7 +273,7 @@ void showText(){
 
 void _runServer() async {
   final connections = Set<WebSocket>();
-  HttpServer.bind('192.168.71.10', _PORT).then((HttpServer server) {
+  HttpServer.bind('192.168.1.22', _PORT).then((HttpServer server) {
     print('[+]WebSocket listening at -- ws://192.168.71.115:$_PORT/');
     server.listen((HttpRequest request) {
       WebSocketTransformer.upgrade(request).then((WebSocket ws) {
